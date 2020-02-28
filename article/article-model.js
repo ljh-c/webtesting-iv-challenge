@@ -17,8 +17,15 @@ async function add(user) {
   return getBy({ id }).first();
 }
 
+async function remove(id) {
+  await db('article').where({ id }).del();
+  
+  return getAll();
+}
+
 module.exports = {
   getAll,
   getBy,
-  add
+  add,
+  remove
 };
