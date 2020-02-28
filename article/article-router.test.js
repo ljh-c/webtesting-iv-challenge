@@ -51,6 +51,14 @@ describe('article router', () => {
   });
 
   describe('DELETE /api/articles', () => {
+    it('should return 200 OK status', async () => {
+      const expectedStatus = 200;
+      
+      const res = await request(server).delete('/api/articles');
+
+      expect(res.status).toEqual(expectedStatus);
+    });
+
     it('should delete the specified article', async () => {
       const res = await request(server).delete('/api/articles/2');
 

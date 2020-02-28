@@ -4,7 +4,9 @@
 	"description": "Server Testing Project",
 	"main": "server.js",
 	"scripts": {
-		"test": "jest --watch --verbose"
+		"test": "cross-env DB_ENV=testing jest --watch --verbose",
+		"server": "nodemon index.js",
+		"start": "node index.js"
 	},
 	"jest": {
 		"testEnvironment": "node"
@@ -26,7 +28,10 @@
 		"supertest": "^3.3.0"
 	},
 	"dependencies": {
+		"cross-env": "^7.0.0",
 		"dotenv": "^8.2.0",
-		"express": "^4.16.4"
+		"express": "^4.16.4",
+		"knex": "^0.20.10",
+		"pg": "^7.18.2"
 	}
 }
